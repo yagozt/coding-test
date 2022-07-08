@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Test Input: ");
-        var problem = new MarsRoverProblem();
+        var problem = new SalesTaxes.SalesTaxesProblem();
         string input = string.Empty;
         do
         {
