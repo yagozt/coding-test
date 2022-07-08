@@ -1,18 +1,18 @@
-﻿using CodingTest.MarsRovers;
-
-namespace CodingTest;
+﻿namespace CodingTest;
 class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("Press Q to exist");
         Console.WriteLine("Test Input: ");
-        var problem = new SalesTaxes.SalesTaxesProblem();
-        string input = string.Empty;
+        var problem = new MarsRovers.MarsRoverProblem();
+        string input = Console.ReadLine() ?? string.Empty;
+
         do
         {
-            input = Console.ReadLine() ?? "Q";
+            Console.WriteLine(problem.Proccess(input));
+            input = Console.ReadLine() ?? "q";
             
-            problem.Proccess(input);
-        } while (input != "Q");
+        } while (input.ToLower() != "q");
     }
 }
