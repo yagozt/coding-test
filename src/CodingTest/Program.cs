@@ -7,12 +7,13 @@ class Program
         Console.WriteLine("Test Input: ");
         var problem = new MarsRovers.MarsRoverProblem();
         string input = Console.ReadLine() ?? string.Empty;
+        string exitKey = "q";
 
         do
         {
-            Console.WriteLine(problem.Proccess(input));
-            input = Console.ReadLine() ?? "q";
+            Console.WriteLine(problem.Proccess(input, exitKey));
+            input = Console.ReadLine() ?? exitKey;
             
-        } while (input.ToLower() != "q");
+        } while (input.ToLower() != exitKey);
     }
 }
