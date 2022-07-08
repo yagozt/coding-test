@@ -16,17 +16,17 @@ namespace CodingTest.MarsRovers
 
         public void ChangeDirection(char newDirection)
         {
-            ChangeDirection(Enum.Parse<DirectionEnum>(newDirection.ToString()));
+            DirectionEnum newDirectionEnum;
+            if (!Enum.TryParse<DirectionEnum>(newDirection.ToString(), out newDirectionEnum)) throw new ArgumentException("Invalid direction", nameof(newDirection));
+            ChangeDirection(newDirectionEnum);
         }
 
-        public void ChangeDirection(DirectionEnum newDirection)
+        private void ChangeDirection(DirectionEnum newDirection)
         {
-            if(newDirection == DirectionEnum.L)
+            if (newDirection == DirectionEnum.L)
                 Position.TurnLeft();
-            else if(newDirection == DirectionEnum.R)
-                Position.TurnRight();
             else
-                throw new ArgumentException("");
+                Position.TurnRight();
         }
 
         public override string ToString()

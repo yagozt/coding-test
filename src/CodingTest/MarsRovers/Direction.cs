@@ -2,18 +2,18 @@ namespace CodingTest.MarsRovers
 {
     public class Direction
     {
-        public Direction(char z)
+        public Direction(char direction)
         {
-            if (z == 'N')
+            if (direction == 'N')
                 ChangeToNorth();
-            else if (z == 'S')
+            else if (direction == 'S')
                 ChangeToSoulth();
-            else if (z == 'W')
+            else if (direction == 'W')
                 ChangeToWest();
-            else if (z == 'E')
+            else if (direction == 'E')
                 ChangeToEast();
             else
-                throw new ArgumentException("");
+                throw new ArgumentException("Invalid direction", nameof(direction));
 
         }
 
